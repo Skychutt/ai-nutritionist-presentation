@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071d1c" />
+    <meta name="description" content="AI 私人营养师：基于阿里云百炼工作流与高德地图 MCP 的营养决策智能体。" />
+    <title>AI 私人营养师｜演讲展示版</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="nutrition-atmosphere" aria-hidden="true">
+      <div class="macro-orbit macro-orbit-one"><span>PROTEIN</span><i></i><b>42g</b></div>
+      <div class="macro-orbit macro-orbit-two"><span>CARB</span><i></i><b>68g</b></div>
+      <div class="macro-orbit macro-orbit-three"><span>FAT</span><i></i><b>21g</b></div>
+      <div class="calorie-beacon"><small>MEAL SIGNAL</small><strong>648</strong><em>kcal</em></div>
+    </div>
+    <div class="chef-logo-cloud" aria-hidden="true">
+      <img class="chef-ghost ghost-one" src="assets/avatar.png" alt="" />
+      <img class="chef-ghost ghost-two" src="assets/avatar.png" alt="" />
+      <img class="chef-ghost ghost-three" src="assets/avatar.png" alt="" />
+      <img class="chef-ghost ghost-four" src="assets/avatar.png" alt="" />
+      <img class="chef-ghost ghost-five" src="assets/avatar.png" alt="" />
+      <img class="chef-ghost ghost-six" src="assets/avatar.png" alt="" />
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="AI 私人营养师首页">
+        <span class="brand-mark">N</span>
+        <span>AI 私人营养师</span>
+      </a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#why">为什么现在</a>
+        <a href="#ability">核心能力</a>
+        <a href="#build">如何实现</a>
+        <a href="#future">未来</a>
+      </nav>
+      <button class="presentation-button" id="presentation-mode">演讲模式 <span>↗</span></button>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pulse"></span> AI AGENT PROJECT · 2026</div>
+          <h1>让每一次吃饭<br /><em>更接近健康。</em></h1>
+          <p class="hero-lede">一个能够看懂一餐饭、理解一个人、连接真实餐厅的 AI 私人营养师。</p>
+          <div class="hero-actions">
+            <a href="#ability" class="button button-primary">开始演示 <span>↓</span></a>
+            <a href="#build" class="button button-ghost">查看工作流</a>
+          </div>
+          <div class="hero-meta">
+            <span>Qwen VL</span><span>百炼工作流</span><span>Amap MCP</span>
+          </div>
+        </div>
+        <div class="hero-art reveal delay-1">
+          <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="glow glow-a"></div><div class="glow glow-b"></div>
+          <div class="avatar-frame"><img src="assets/avatar.png" alt="AI 私人营养师形象" /></div>
+          <div class="floating-card insight-card">
+            <span class="card-icon">✦</span>
+            <div><small>今日洞察</small><strong>高蛋白 · 少油 · 适量碳水</strong></div>
+          </div>
+          <div class="floating-card signal-card"><span class="signal-dot"></span> 工作流已就绪</div>
+        </div>
+        <div class="scroll-hint">SCROLL TO EXPLORE <span></span></div>
+      </section>
+
+      <section id="why" class="section-shell topic-section">
+        <div class="section-kicker reveal">01 · WHY NOW</div>
+        <div class="split-title reveal">
+          <h2>健康管理正在从<br /><span>“知道”走向“做到”。</span></h2>
+          <p>饮食建议的难点不在知识本身，而在于它必须发生在用户真正要做选择的那一刻。</p>
+        </div>
+        <div class="evidence-grid">
+          <article class="evidence-card large reveal">
+            <p class="card-label">体重管理年</p>
+            <div class="big-number">2024—2026</div>
+            <p>国家卫生健康委等 16 部门启动“体重管理年”活动，推动健康生活方式成为日常。</p>
+            <div class="mini-timeline"><span class="active">启动</span><i></i><span>普及</span><i></i><span>支持环境</span></div>
+          </article>
+          <article class="evidence-card accent reveal delay-1">
+            <p class="card-label">生成式 AI</p>
+            <div class="big-number">5.15 亿</div>
+            <p>截至 2025 年 6 月，我国生成式人工智能用户规模。</p>
+            <div class="data-row"><strong>36.5%</strong><span>普及率</span></div>
+          </article>
+          <article class="evidence-card reveal delay-2">
+            <p class="card-label">真正的机会</p>
+            <h3>从回答问题，走向完成一次真实选择。</h3>
+            <p>当 AI 能理解照片、目标和位置，它才能把建议放进生活，而不只是放在聊天框里。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell story-section">
+        <div class="section-kicker reveal">THE USER MOMENT</div>
+        <h2 class="wide-title reveal">同一个用户，会在一天里切换三种营养场景。</h2>
+        <div class="moment-rail">
+          <article class="moment reveal"><span>01</span><h3>拍照吃饭</h3><p>“这顿饭热量多少？”</p><strong>图片识别 + 营养估算</strong></article>
+          <article class="moment reveal delay-1"><span>02</span><h3>管理目标</h3><p>“今天还该怎么吃？”</p><strong>个人档案 + 下一餐建议</strong></article>
+          <article class="moment reveal delay-2"><span>03</span><h3>外出就餐</h3><p>“附近有什么能吃？”</p><strong>真实地图 + 点餐建议</strong></article>
+        </div>
+      </section>
+
+      <section id="ability" class="section-shell ability-section">
+        <div class="section-heading reveal"><div><span class="section-kicker">02 · CAPABILITIES</span><h2>三种能力，<br />一次自然对话。</h2></div><p>不是把功能堆在一起，而是根据用户意图，在正确的时机走正确的路径。</p></div>
+        <div class="feature-stack">
+          <article class="feature-card feature-food reveal">
+            <div class="feature-image"><img src="assets/meal-chinese.png" alt="中式饭菜图片测试素材" /></div>
+            <div class="feature-copy"><span class="feature-index">CAPABILITY 01</span><h3>看懂一餐饭</h3><p>识别食物组成、估算份量，并把热量、蛋白质、碳水和脂肪表达为合理区间。</p><ul><li>菜品与烹饪线索</li><li>以餐具为参照的份量估算</li><li>图片不清晰时主动说明不确定性</li></ul></div>
+          </article>
+          <article class="feature-card feature-plan reveal">
+            <div class="feature-copy"><span class="feature-index">CAPABILITY 02</span><h3>记住一个人</h3><p>理解身高、体重、运动、目标、过敏和饮食偏好，把宏观目标拆成下一餐可执行的建议。</p><div class="quote-box">“用区间和追问，替代看似精确的编造。”</div></div>
+            <div class="plan-visual"><div class="profile-chip">25岁 · 女 · 165cm · 60kg</div><div class="metric-line"><span>目标</span><b>健康减脂</b></div><div class="metric-line"><span>建议</span><b>蛋白质优先 · 适量主食</b></div><div class="metric-line"><span>下一餐</span><b>鸡蛋 + 全谷物 + 蔬菜</b></div></div>
+          </article>
+          <article class="feature-card feature-map reveal">
+            <div class="map-stage"><div class="map-grid"></div><span class="map-pin pin-one">●</span><span class="map-pin pin-two">●</span><span class="map-pin pin-three">●</span><div class="map-route"></div><div class="map-label">北京三里屯<br /><small>3 km 内 · 轻食 / 健身餐</small></div></div>
+            <div class="feature-copy"><span class="feature-index">CAPABILITY 03</span><h3>推荐一顿饭</h3><p>从用户位置和饮食目标中提取搜索参数，调用高德地图 MCP 返回真实餐厅，再给通用、可执行的点餐建议。</p><ul><li>只使用高德返回的真实餐厅</li><li>数据缺失就写“未提供”</li><li>工具报错时停止推荐，不编造结果</li></ul></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <div class="section-shell">
+          <div class="demo-head reveal"><div><span class="section-kicker">INTERACTIVE DEMO</span><h2>用三句话，走完三条路径。</h2></div><p>点击不同场景，查看这个智能体会如何理解用户的输入。</p></div>
+          <div class="demo-tabs reveal" role="tablist">
+            <button class="demo-tab active" data-demo="food">食物照片</button>
+            <button class="demo-tab" data-demo="plan">饮食建议</button>
+            <button class="demo-tab" data-demo="map">高德推荐</button>
+          </div>
+          <div class="demo-window reveal">
+            <div class="window-top"><span></span><span></span><span></span><b>AI 私人营养师 · 流程演示</b></div>
+            <div class="demo-body">
+              <div class="chat-side"><div class="user-bubble" id="demo-question"></div><div class="demo-image" id="demo-image"><img src="assets/meal-protein.png" alt="健康增肌餐" /></div></div>
+              <div class="flow-side"><span class="flow-label">WORKFLOW PATH</span><div class="flow-nodes" id="flow-nodes"></div><div class="answer-preview" id="demo-answer"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="build" class="section-shell build-section">
+        <div class="section-heading reveal"><div><span class="section-kicker">03 · HOW IT WORKS</span><h2>把复杂能力，拆成可控工作流。</h2></div><p>百炼工作流让每一步都可见、可调试、可解释；这对健康建议尤其重要。</p></div>
+        <div class="architecture-grid reveal">
+          <div class="workflow-image"><img src="assets/workflow.png" alt="百炼工作流画布截图" /></div>
+          <div class="architecture-notes"><article><span>01</span><div><h3>意图分类</h3><p>先识别用户是要分析食物、寻找餐厅，还是补充个人信息。</p></div></article><article><span>02</span><div><h3>多模态理解</h3><p>Qwen3-VL-Flash 接收图片，完成食物识别与营养线索提取。</p></div></article><article><span>03</span><div><h3>真实工具调用</h3><p>Amap Maps MCP 完成地理编码、周边搜索与结果传递。</p></div></article><article><span>04</span><div><h3>结果守护</h3><p>字段缺失不猜；isError=true 时停止排序与餐厅推荐。</p></div></article></div>
+        </div>
+      </section>
+
+      <section class="section-shell trust-section">
+        <div class="section-kicker reveal">TRUST BY DESIGN</div>
+        <h2 class="wide-title reveal">好的健康 Agent，<span>必须知道何时停下。</span></h2>
+        <div class="trust-grid">
+          <article class="trust-card reveal"><span class="trust-icon">◌</span><h3>图片不清晰</h3><p>主动标注不确定性，邀请用户补拍或补充份量。</p></article>
+          <article class="trust-card reveal delay-1"><span class="trust-icon">⌁</span><h3>模型估算</h3><p>使用营养区间，不把视觉推测伪装成实验室数据。</p></article>
+          <article class="trust-card reveal delay-2"><span class="trust-icon">×</span><h3>地图报错</h3><p>工具报错与搜索为空分开处理；报错时不编造餐厅。</p></article>
+          <article class="trust-card reveal delay-3"><span class="trust-icon">+</span><h3>医疗边界</h3><p>不做疾病诊断；特殊情况建议咨询医生或持证营养师。</p></article>
+        </div>
+      </section>
+
+      <section class="section-shell journey-section">
+        <div class="section-kicker reveal">04 · THE 24-SCENE STORY</div>
+        <div class="split-title reveal">
+          <h2>这不是一个功能页，<br /><span>而是一场完整演讲。</span></h2>
+          <p>网页按 PPT 的叙事顺序展开。每一格都可作为你演讲时停留、讲解和过渡的独立“页面”。</p>
+        </div>
+        <div class="scene-grid">
+          <article class="scene-card reveal"><span>01</span><b>封面</b><p>AI 私人营养师：让每一次吃饭更接近健康。</p></article>
+          <article class="scene-card reveal"><span>02</span><b>开场问题</b><p>我们每天都在吃，但很少知道怎样吃更适合自己。</p></article>
+          <article class="scene-card reveal"><span>03</span><b>演讲路线</b><p>为什么做、做了什么、如何实现、未来去哪里。</p></article>
+          <article class="scene-card reveal"><span>04</span><b>时代背景</b><p>体重管理与生成式 AI 共同推动健康服务走向日常。</p></article>
+          <article class="scene-card reveal"><span>05</span><b>真实痛点</b><p>健康知识很多，真正的选择却发生在拍照和点餐的瞬间。</p></article>
+          <article class="scene-card reveal"><span>06</span><b>目标用户</b><p>减脂、增肌、想吃得更明白的人，都需要即时建议。</p></article>
+          <article class="scene-card reveal"><span>07</span><b>产品定义</b><p>一个看懂一餐、理解一个人、连接一座城市的 Agent。</p></article>
+          <article class="scene-card reveal"><span>08</span><b>能力总览</b><p>食物识别、营养对话、真实餐厅推荐。</p></article>
+          <article class="scene-card reveal"><span>09</span><b>能力一</b><p>通过 Qwen VL 理解饭菜图片，输出营养合理区间。</p></article>
+          <article class="scene-card reveal"><span>10</span><b>能力二</b><p>提取用户档案与偏好，把目标化成下一餐行动。</p></article>
+          <article class="scene-card reveal"><span>11</span><b>能力三</b><p>借助高德 MCP 找到真实存在的附近健康餐厅。</p></article>
+          <article class="scene-card reveal"><span>12</span><b>工作流全景</b><p>意图分类负责分流，节点编排保证每条路径可调试。</p></article>
+          <article class="scene-card reveal"><span>13</span><b>意图路由</b><p>一句自然语言，自动判断走图片、档案还是地图分支。</p></article>
+          <article class="scene-card reveal"><span>14</span><b>视觉理解</b><p>图片作为本轮输入，识别食材、烹饪方式和份量线索。</p></article>
+          <article class="scene-card reveal"><span>15</span><b>营养推理</b><p>坚持区间表达与不确定性提示，不制造“伪精确”。</p></article>
+          <article class="scene-card reveal"><span>16</span><b>位置提取</b><p>从用户原话中提取位置、饮食目标、关键词与搜索半径。</p></article>
+          <article class="scene-card reveal"><span>17</span><b>地图调用</b><p>地理编码、坐标提取、周边搜索由 MCP 串联完成。</p></article>
+          <article class="scene-card reveal"><span>18</span><b>餐厅排序</b><p>饮食契合度优先，其次才是距离、评分和价格。</p></article>
+          <article class="scene-card reveal"><span>19</span><b>异常处理</b><p>地图额度不足时如实说明；搜索为空时才建议调整条件。</p></article>
+          <article class="scene-card reveal"><span>20</span><b>食物测试</b><p>用中式套餐、轻食和快餐验证识别与营养输出。</p></article>
+          <article class="scene-card reveal"><span>21</span><b>对话测试</b><p>用身高、体重、目标、运动和偏好形成可持续档案。</p></article>
+          <article class="scene-card reveal"><span>22</span><b>高德测试</b><p>只有真实返回数据才推荐餐厅，缺失字段明确写“未提供”。</p></article>
+          <article class="scene-card reveal"><span>23</span><b>部署与分享</b><p>百炼发布 Agent；网页部署 OSS；钉钉机器人连接真实对话。</p></article>
+          <article class="scene-card final reveal"><span>24</span><b>结尾</b><p>让 AI 不替人做决定，而是让每一次选择更接近健康。</p></article>
+        </div>
+      </section>
+
+      <section class="process-section">
+        <div class="section-shell">
+          <div class="process-head reveal"><span class="section-kicker">05 · BUILD & ITERATE</span><h2>从一个想法，到一个能现场演示的 Agent。</h2></div>
+          <div class="build-steps">
+            <article class="build-step reveal"><span>STEP 01</span><h3>定义边界</h3><p>不做疾病诊断；明确“营养估算”是辅助判断，不是医疗结论。</p></article>
+            <article class="build-step reveal"><span>STEP 02</span><h3>画出工作流</h3><p>通过意图分类把复杂对话拆成三条清晰、可验证的服务链路。</p></article>
+            <article class="build-step reveal"><span>STEP 03</span><h3>接入真实世界</h3><p>把高德地图 MCP 加入流程，让“附近吃什么”可以基于真实数据回答。</p></article>
+            <article class="build-step reveal"><span>STEP 04</span><h3>调试与守护</h3><p>把图片残留、上传就绪、额度不足、工具错误逐一变成可解释的规则。</p></article>
+          </div>
+          <div class="speaker-notes reveal">
+            <span>明日演讲提示</span>
+            <p>现场可先讲“为什么做”，再点击互动演示；若网络不稳定，直接切换到 PPT 或本地网页，内容完全一致。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell future-section" id="future">
+        <div class="section-kicker reveal">04 · WHAT'S NEXT</div>
+        <div class="split-title reveal"><h2>从一次建议，走向<br /><span>长期健康陪伴。</span></h2><p>真正的成长不是再加一个功能，而是逐步提升对人的理解、对数据的尊重和对行为的陪伴。</p></div>
+        <div class="roadmap-grid">
+          <article class="roadmap-card reveal"><span>近期</span><h3>更稳定的体验</h3><p>解决图片上传就绪、会话重置、异常提示与测试闭环。</p></article>
+          <article class="roadmap-card highlighted reveal delay-1"><span>中期</span><h3>结构化长期记忆</h3><p>把体征、目标、过敏、运动和偏好沉淀为可控档案。</p></article>
+          <article class="roadmap-card reveal delay-2"><span>远期</span><h3>连接真实健康服务</h3><p>接入穿戴设备、食堂外卖、路线导航和长期趋势追踪。</p></article>
+        </div>
+      </section>
+
+      <section class="closing">
+        <div class="closing-orb orb-left"></div><div class="closing-orb orb-right"></div>
+        <div class="section-shell closing-inner reveal"><span class="section-kicker">THE TAKEAWAY</span><h2>AI 私人营养师的价值，<br />不在于替人做决定，<br /><em>而在于让每一次选择更接近健康。</em></h2><p>基于阿里云百炼工作流、Qwen VL 与高德地图 MCP 构建。</p><a href="#top" class="button button-light">回到开头 ↑</a></div>
+      </section>
+    </main>
+
+    <footer class="footer section-shell"><span>AI 私人营养师 · 演讲展示版</span><span>信息来源：国家卫健委 · CNNIC · 阿里云百炼官方文档</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
