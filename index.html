@@ -32,10 +32,9 @@
         <span>AI 私人营养师</span>
       </a>
       <nav class="nav" aria-label="页面导航">
-        <a href="#why">为什么现在</a>
-        <a href="#ability">核心能力</a>
-        <a href="#build">如何实现</a>
-        <a href="#future">未来</a>
+        <a href="#why">第一部分 · 背景</a>
+        <a href="#agent-showcase">第二部分 · Agent 展示</a>
+        <a href="#trust-future">第三部分 · 未来</a>
       </nav>
       <button class="presentation-button" id="presentation-mode">演讲模式 <span>↗</span></button>
     </header>
@@ -47,7 +46,7 @@
           <h1>让每一次吃饭<br /><em>更接近健康。</em></h1>
           <p class="hero-lede">一个能够看懂一餐饭、理解一个人、连接真实餐厅的 AI 私人营养师。</p>
           <div class="hero-actions">
-            <a href="#ability" class="button button-primary">开始演示 <span>↓</span></a>
+            <a href="#agent-showcase" class="button button-primary">开始演示 <span>↓</span></a>
             <a href="#build" class="button button-ghost">查看工作流</a>
           </div>
           <div class="hero-meta">
@@ -69,8 +68,14 @@
         <div class="scroll-hint">SCROLL TO EXPLORE <span></span></div>
       </section>
 
+      <section class="section-shell chapter-nav reveal" aria-label="演讲三大部分">
+        <a class="chapter-link chapter-one" href="#why"><span>PART 01</span><strong>为什么需要它</strong><small>趋势 · 痛点 · 用户时刻</small><b>01</b></a>
+        <a class="chapter-link chapter-two" href="#agent-showcase"><span>PART 02</span><strong>Agent 展示</strong><small>能力 · 工作流 · 真实测试</small><b>02</b></a>
+        <a class="chapter-link chapter-three" href="#trust-future"><span>PART 03</span><strong>未来与发布</strong><small>可信边界 · 路线图 · 现场演示</small><b>03</b></a>
+      </section>
+
       <section id="why" class="section-shell topic-section">
-        <div class="section-kicker reveal">01 · WHY NOW</div>
+        <div class="part-label reveal"><span>PART 01</span><i></i> WHY IT MATTERS</div>
         <div class="split-title reveal">
           <h2>健康管理正在从<br /><span>“知道”走向“做到”。</span></h2>
           <p>饮食建议的难点不在知识本身，而在于它必须发生在用户真正要做选择的那一刻。</p>
@@ -106,8 +111,9 @@
         </div>
       </section>
 
-      <section id="ability" class="section-shell ability-section">
-        <div class="section-heading reveal"><div><span class="section-kicker">02 · CAPABILITIES</span><h2>三种能力，<br />一次自然对话。</h2></div><p>不是把功能堆在一起，而是根据用户意图，在正确的时机走正确的路径。</p></div>
+      <section id="agent-showcase" class="section-shell ability-section">
+        <div class="part-label reveal"><span>PART 02</span><i></i> AGENT SHOWCASE</div>
+        <div class="section-heading reveal"><div><span class="section-kicker">能力总览 · 三条真实服务链路</span><h2>三种能力，<br />一次自然对话。</h2></div><p>不是把功能堆在一起，而是根据用户意图，在正确的时机走正确的路径。</p></div>
         <div class="feature-stack">
           <article class="feature-card feature-food reveal">
             <div class="feature-image"><img src="assets/meal-chinese.png" alt="中式饭菜图片测试素材" /></div>
@@ -142,15 +148,31 @@
         </div>
       </section>
 
+      <section class="section-shell test-results" id="agent-test-results">
+        <div class="test-results-head reveal">
+          <div><span class="section-kicker">REAL AGENT TEST RESULTS</span><h2>不是概念图。<br /><span>是已经跑通的真实测试。</span></h2></div>
+          <p>以下截图来自百炼工作流的实际测试过程：每一条路径均经过意图分类、节点执行和最终结果输出。</p>
+        </div>
+        <div class="test-proof-grid">
+          <figure class="test-proof-card test-proof-wide reveal"><div class="test-proof-image"><img src="assets/tests/food-workflow-test.png" alt="食物识别与营养分析工作流执行成功截图" /></div><figcaption><span>TEST 01 · 图像识别</span><h3>一张饭菜图，跑通识别到营养建议。</h3><p>食物识别、营养分析与下一餐建议节点均成功执行。</p></figcaption></figure>
+          <figure class="test-proof-card reveal delay-1"><div class="test-proof-image"><img src="assets/tests/food-result-test.png" alt="食物识别营养结果截图" /></div><figcaption><span>OUTPUT · 营养估算</span><h3>5 种食物与整餐营养总量</h3><p>输出食物清单、份量、热量和三大营养素，保持区间与边界说明。</p></figcaption></figure>
+          <figure class="test-proof-card reveal delay-2"><div class="test-proof-image"><img src="assets/tests/profile-test.png" alt="个人档案与饮食对话执行成功截图" /></div><figcaption><span>TEST 02 · 饮食档案</span><h3>理解人，再给建议。</h3><p>读取年龄、身高、体重、目标与偏好，并针对缺失信息继续追问。</p></figcaption></figure>
+          <figure class="test-proof-card reveal"><div class="test-proof-image"><img src="assets/tests/map-workflow-test.png" alt="高德地图餐厅推荐工作流执行成功截图" /></div><figcaption><span>TEST 03 · 高德 MCP</span><h3>位置、坐标、周边搜索逐步可见。</h3><p>从用户原话提取位置与目标，串联地理编码、坐标提取和周边搜索。</p></figcaption></figure>
+          <figure class="test-proof-card test-proof-wide reveal delay-1"><div class="test-proof-image"><img src="assets/tests/map-result-test.png" alt="高德地图真实餐厅推荐结果截图" /></div><figcaption><span>OUTPUT · 真实餐厅</span><h3>只使用地图返回的真实结果排序。</h3><p>测试中返回轻食健身餐、AVOCADO TREE 等餐厅；输出同时给出点餐建议与饮食提醒。</p></figcaption></figure>
+        </div>
+        <div class="test-status-strip reveal"><div><b>3</b><span>条业务路径</span></div><div><b>✓</b><span>节点执行成功</span></div><div><b>真实</b><span>地图工具结果</span></div><div><b>可解释</b><span>结果与异常分流</span></div></div>
+      </section>
+
       <section id="build" class="section-shell build-section">
-        <div class="section-heading reveal"><div><span class="section-kicker">03 · HOW IT WORKS</span><h2>把复杂能力，拆成可控工作流。</h2></div><p>百炼工作流让每一步都可见、可调试、可解释；这对健康建议尤其重要。</p></div>
+        <div class="section-heading reveal"><div><span class="section-kicker">PART 02 · HOW IT WORKS</span><h2>把复杂能力，拆成可控工作流。</h2></div><p>百炼工作流让每一步都可见、可调试、可解释；这对健康建议尤其重要。</p></div>
         <div class="architecture-grid reveal">
           <div class="workflow-image"><img src="assets/workflow.png" alt="百炼工作流画布截图" /></div>
           <div class="architecture-notes"><article><span>01</span><div><h3>意图分类</h3><p>先识别用户是要分析食物、寻找餐厅，还是补充个人信息。</p></div></article><article><span>02</span><div><h3>多模态理解</h3><p>Qwen3-VL-Flash 接收图片，完成食物识别与营养线索提取。</p></div></article><article><span>03</span><div><h3>真实工具调用</h3><p>Amap Maps MCP 完成地理编码、周边搜索与结果传递。</p></div></article><article><span>04</span><div><h3>结果守护</h3><p>字段缺失不猜；isError=true 时停止排序与餐厅推荐。</p></div></article></div>
         </div>
       </section>
 
-      <section class="section-shell trust-section">
+      <section class="section-shell trust-section" id="trust-future">
+        <div class="part-label reveal"><span>PART 03</span><i></i> FUTURE &amp; DELIVERY</div>
         <div class="section-kicker reveal">TRUST BY DESIGN</div>
         <h2 class="wide-title reveal">好的健康 Agent，<span>必须知道何时停下。</span></h2>
         <div class="trust-grid">
@@ -212,7 +234,7 @@
       </section>
 
       <section class="section-shell future-section" id="future">
-        <div class="section-kicker reveal">04 · WHAT'S NEXT</div>
+        <div class="section-kicker reveal">PART 03 · WHAT'S NEXT</div>
         <div class="split-title reveal"><h2>从一次建议，走向<br /><span>长期健康陪伴。</span></h2><p>真正的成长不是再加一个功能，而是逐步提升对人的理解、对数据的尊重和对行为的陪伴。</p></div>
         <div class="roadmap-grid">
           <article class="roadmap-card reveal"><span>近期</span><h3>更稳定的体验</h3><p>解决图片上传就绪、会话重置、异常提示与测试闭环。</p></article>
